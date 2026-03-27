@@ -1,0 +1,12 @@
+class Solution:
+    def areSimilar(self, mat: List[List[int]], k: int) -> bool:
+        m,n=len(mat), len(mat[0])
+        shift = k%n
+        if shift ==0:
+            return True
+        for i in range(m):
+            for j in range(n):
+                if mat[i][j]!=mat[i][(j+shift)%n]:
+                    return False
+        return True                
+        
